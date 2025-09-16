@@ -1,4 +1,4 @@
-# sample_sensor_kit_launch
+# sensor_kit_pasifica_launch
 
 🗃️ This is an archived repository.
 
