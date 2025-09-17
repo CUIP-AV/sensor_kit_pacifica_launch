@@ -8,16 +8,16 @@
       <push-ros-namespace namespace="traffic_light"/>
 
       <!-- (usb_cam_node is assumed to have launched on logging PC) -->
-      <node pkg="topic_tools" exec="relay" name="tl_camera_info_relay" output="log">
-        <param name="input_topic" value="$(var camera_type)/camera_info"/>
-        <param name="output_topic" value="camera_info"/>
+      <node pkg="vimbax_camera" exec="vimbax_camera_node" name="camera1" output="screen">
+        <param name="camera_id" value="DEV_000F315E05D9"/>
+        <param name="pixel_format" value="BayerRG8"/>
         <param name="type" value="sensor_msgs/msg/CameraInfo"/>
         <param name="reliability" value="best_effort"/>
       </node>
 
-      <node pkg="topic_tools" exec="relay" name="tl_compressed_image_relay" output="log">
-        <param name="input_topic" value="$(var camera_type)/image_raw/compressed"/>
-        <param name="output_topic" value="image_raw/compressed"/>
+      <node pkg="vimbax_camera" exec="vimbax_camera_node" name="camera2" output="screen">
+        <param name="camera_id" value="DEV_000F315E05DE"/>
+        <param name="pixel_format" value="BayerRG8"/>
         <param name="type" value="sensor_msgs/msg/CompressedImage"/>
         <param name="reliability" value="best_effort"/>
       </node>
